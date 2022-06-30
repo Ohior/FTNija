@@ -4,7 +4,7 @@
 # 
 #    /\`.   ,'/\
 #   //\\0 " 0//\\       @Last Modified by:   Your name
-#  //    ,^.    \\      @Last Modified time: 2022-06-30 02:06:15
+#  //    ,^.    \\      @Last Modified time: 2022-06-30 02:09:47
 #  \\           //
 #   \\         //
 #
@@ -26,7 +26,7 @@ def indexPage(request):
     try:
         # get all data from database
         key_val = DictModel.objects.get()
-    except DoesNotExist as dne:
+    except DictModel.DoesNotExist as dne:
         key_val = {}
         print(dne)
     return render(request, 'index.html', {'context':key_val.json})
