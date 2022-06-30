@@ -4,7 +4,7 @@
 # 
 #    /\`.   ,'/\
 #   //\\0 " 0//\\       @Last Modified by:   Your name
-#  //    ,^.    \\      @Last Modified time: 2022-06-30 02:09:47
+#  //    ,^.    \\      @Last Modified time: 2022-06-30 02:12:22
 #  \\           //
 #   \\         //
 #
@@ -29,6 +29,7 @@ def indexPage(request):
     except DictModel.DoesNotExist as dne:
         key_val = {}
         print(dne)
+        return render(request, 'index.html', {'context':key_val})
     return render(request, 'index.html', {'context':key_val.json})
 
 def lunchBot(request):
