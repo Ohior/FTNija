@@ -4,7 +4,7 @@
 # 
 #    /\`.   ,'/\
 #   //\\0 " 0//\\       @Last Modified by:   Your name
-#  //    ,^.    \\      @Last Modified time: 2022-06-29 15:24:22
+#  //    ,^.    \\      @Last Modified time: 2022-06-30 02:06:15
 #  \\           //
 #   \\         //
 #
@@ -26,9 +26,9 @@ def indexPage(request):
     try:
         # get all data from database
         key_val = DictModel.objects.get()
-    except AttributeError as ae:
+    except DoesNotExist as dne:
         key_val = {}
-        print(ae)
+        print(dne)
     return render(request, 'index.html', {'context':key_val.json})
 
 def lunchBot(request):
